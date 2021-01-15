@@ -33,8 +33,6 @@ public class RepoListFragment extends Fragment
     public RecyclerView recyclerView;
     private RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(new ArrayList<>(), this);
 
-    @BindView(R.id.repos_profile_pic)
-    ImageView profilePicImageView;
 
     private RepoListFragmentInterface mainView;
     public interface RepoListFragmentInterface {
@@ -64,15 +62,6 @@ public class RepoListFragment extends Fragment
 
     public void updateRepoList(List<GitResponse> gitResponsesList){
         recyclerViewAdapter.updateList(gitResponsesList);
-    }
-
-    public void updateProfilePic(String picURL) {
-        Glide.with(this)
-                .load(picURL)
-                .placeholder(R.drawable.ic_baseline_person_24)
-                .circleCrop()
-//                .transition(withCrossFade())
-                .into(profilePicImageView);
     }
 
     @Override

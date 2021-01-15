@@ -3,6 +3,7 @@ package com.aoinc.w3d3_class_networkcalls.presenters;
 import android.util.Log;
 
 import com.aoinc.w3d3_class_networkcalls.models.GitResponse;
+import com.aoinc.w3d3_class_networkcalls.models.Owner;
 import com.aoinc.w3d3_class_networkcalls.network.GitRetrofit;
 import com.aoinc.w3d3_class_networkcalls.presenters.MainViewPresenterContract.*;
 import com.aoinc.w3d3_class_networkcalls.views.adapters.RecyclerViewAdapter;
@@ -39,8 +40,12 @@ public class MainPresenter implements MainPresenterInterface {
                                     List<GitResponse> gitResponses = response.body();
                                     mainView.updateRepoList(gitResponses);
 
-                                    String picURL = gitResponses.get(0).getOwner().getAvatarUrl();
+                                    Owner owner = gitResponses.get(0).getOwner();
+                                    String picURL = owner.getAvatarUrl();
                                     mainView.updateProfilePic(picURL);
+
+                                    String userName = owner.getLogin();
+                                    mainView.updateUserName(userName);
                                     
                                 } else {
                                     Log.d("REPO_REQUEST", "Error -> something didn't work.");

@@ -15,5 +15,6 @@ public interface MainViewPresenterContract {
         Context getContext();
         void updateRepoList(List<GitResponse> gitResponses);
         void updateProfilePic(String picURL);
+        void updateUserName(String userName);
     }
 }

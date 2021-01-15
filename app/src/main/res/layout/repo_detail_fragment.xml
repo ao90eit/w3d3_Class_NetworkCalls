@@ -5,11 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:elevation="8dp">
+    android:elevation="8dp"
+    android:clickable="true"
+    android:focusable="true">
 
     <TextView
         android:id="@+id/repo_detail_title_textView"
         style="@style/TextHeader"
+        android:layout_marginTop="64dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="center"
@@ -26,7 +29,7 @@
         android:text="@string/created_on_label"
         android:textAlignment="textEnd"
         app:layout_constraintBottom_toBottomOf="@+id/repo_detail_created_textView"
-        app:layout_constraintEnd_toStartOf="@id/detail_guide_vert_40"
+        app:layout_constraintEnd_toStartOf="@id/detail_guide_vert_35"
         app:layout_constraintHorizontal_weight=".5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/repo_detail_created_textView" />
@@ -39,9 +42,9 @@
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight=".5"
-        app:layout_constraintStart_toEndOf="@id/detail_guide_vert_40"
+        app:layout_constraintStart_toEndOf="@id/detail_guide_vert_35"
         app:layout_constraintTop_toBottomOf="@+id/repo_detail_title_textView"
-        tools:text="YYYY MM DD 00:00" />
+        tools:text="YYYY MM DD 00:00 0" />
 
     <TextView
         android:id="@+id/repo_detail_updated_label_textView"
@@ -51,7 +54,7 @@
         android:text="@string/updated_on_label"
         android:textAlignment="textEnd"
         app:layout_constraintBottom_toBottomOf="@+id/repo_detail_updated_textView"
-        app:layout_constraintEnd_toStartOf="@id/detail_guide_vert_40"
+        app:layout_constraintEnd_toStartOf="@id/detail_guide_vert_35"
         app:layout_constraintHorizontal_weight=".5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/repo_detail_updated_textView" />
@@ -64,9 +67,9 @@
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight=".5"
-        app:layout_constraintStart_toEndOf="@id/detail_guide_vert_40"
+        app:layout_constraintStart_toEndOf="@id/detail_guide_vert_35"
         app:layout_constraintTop_toBottomOf="@+id/repo_detail_created_textView"
-        tools:text="YYYY MM DD 00:00" />
+        tools:text="YYYY MM DD 00:00 0" />
 
     <TextView
         android:id="@+id/repo_detail_stargazers_label_textView"
@@ -76,7 +79,7 @@
         android:text="@string/stargazers_label"
         android:textAlignment="textEnd"
         app:layout_constraintBottom_toBottomOf="@+id/repo_detail_stargazers_textView"
-        app:layout_constraintEnd_toStartOf="@id/detail_guide_vert_40"
+        app:layout_constraintEnd_toStartOf="@id/detail_guide_vert_35"
         app:layout_constraintHorizontal_weight=".5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/repo_detail_stargazers_textView" />
@@ -89,7 +92,7 @@
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight=".5"
-        app:layout_constraintStart_toEndOf="@id/detail_guide_vert_40"
+        app:layout_constraintStart_toEndOf="@id/detail_guide_vert_35"
         app:layout_constraintTop_toBottomOf="@+id/repo_detail_updated_textView"
         tools:text="223" />
 
@@ -105,11 +108,11 @@
         app:layout_constraintTop_toBottomOf="@id/repo_detail_stargazers_label_textView" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/detail_guide_vert_40"
+        android:id="@+id/detail_guide_vert_35"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent=".4" />
+        app:layout_constraintGuide_percent=".35" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

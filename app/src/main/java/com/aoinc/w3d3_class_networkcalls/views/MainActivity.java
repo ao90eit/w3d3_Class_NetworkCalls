@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity
 
     MainPresenter mainPresenter;
 
+    ProfileInfoFragment profileInfoFragment;
     RepoListFragment repoListFragment;
     public List<GitResponse> gitResponseList = new ArrayList<>();
-
     RepoDetailFragment repoDetailFragment = new RepoDetailFragment();
 
     @Override
@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity
 
         ButterKnife.bind(this);
 
+        profileInfoFragment = (ProfileInfoFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.main_profile_info_fragment);
         repoListFragment = (RepoListFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.main_repos_list_fragment);
 
@@ -58,7 +60,12 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void updateProfilePic(String picURL) {
-        repoListFragment.updateProfilePic(picURL);
+        profileInfoFragment.updateProfilePic(picURL);
+    }
+
+    @Override
+    public void updateUserName(String userName) {
+        profileInfoFragment.updateUserName(userName);
     }
 
     public static final String GIT_PARCELABLE = "git_parcelable";
