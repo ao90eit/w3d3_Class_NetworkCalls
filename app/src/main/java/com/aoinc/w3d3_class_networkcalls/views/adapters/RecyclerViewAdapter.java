@@ -71,7 +71,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         @Override
         public void onClick(View v) {
-            Log.d("repo_listener", "on click in holder");
+//            Log.d("repo_listener", "on click in holder");
             onRepoClickListener.onRepoItemClick(getAdapterPosition());
         }
     }

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">w3d3_Class_NetworkCalls</string>
+    <string name="open_repo_button">Open repo</string>
+    <string name="repository_name_label">Repository Name</string>
+    <string name="created_on_label">Created on</string>
+    <string name="updated_on_label">Updated on</string>
+    <string name="stargazers_label">Stars</string>
 </resources>

@@ -1,6 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:elevation="8dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/repo_detail_title_label_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/detail_guide_vert_50"
+        android:text="@string/repository_name_label"
+        app:layout_constraintHorizontal_weight=".5"
+        android:textAlignment="textEnd"/>
+
+    <TextView
+        android:id="@+id/repo_detail_title_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight=".5"
+        app:layout_constraintStart_toEndOf="@id/detail_guide_vert_50"
+        app:layout_constraintTop_toTopOf="@id/repo_detail_title_label_textView"
+        tools:text="Repository Name"
+        android:textAlignment="textStart"/>
+
+    <TextView
+        android:id="@+id/repo_detail_created_label_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/repo_detail_title_label_textView"
+        app:layout_constraintEnd_toStartOf="@id/detail_guide_vert_50"
+        android:text="@string/created_on_label"
+        app:layout_constraintHorizontal_weight=".5"
+        android:textAlignment="textEnd"/>
+
+    <TextView
+        android:id="@+id/repo_detail_created_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight=".5"
+        app:layout_constraintStart_toEndOf="@id/detail_guide_vert_50"
+        app:layout_constraintTop_toTopOf="@id/repo_detail_created_label_textView"
+        tools:text="Repository Name"
+        android:textAlignment="textStart"/>
+
+    <TextView
+        android:id="@+id/repo_detail_updated_label_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/repo_detail_created_label_textView"
+        app:layout_constraintEnd_toStartOf="@id/detail_guide_vert_50"
+        android:text="@string/updated_on_label"
+        app:layout_constraintHorizontal_weight=".5"
+        android:textAlignment="textEnd"/>
+
+    <TextView
+        android:id="@+id/repo_detail_updated_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight=".5"
+        app:layout_constraintStart_toEndOf="@id/detail_guide_vert_50"
+        app:layout_constraintTop_toTopOf="@id/repo_detail_updated_label_textView"
+        tools:text="Repository Name"
+        android:textAlignment="textStart"/>
+
+    <TextView
+        android:id="@+id/repo_detail_stargazers_label_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/repo_detail_updated_textView"
+        app:layout_constraintEnd_toStartOf="@id/detail_guide_vert_50"
+        android:text="@string/stargazers_label"
+        app:layout_constraintHorizontal_weight=".5"
+        android:textAlignment="textEnd"/>
+
+    <TextView
+        android:id="@+id/repo_detail_stargazers_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight=".5"
+        app:layout_constraintStart_toEndOf="@id/detail_guide_vert_50"
+        app:layout_constraintTop_toTopOf="@id/repo_detail_stargazers_label_textView"
+        tools:text="Repository Name"
+        android:textAlignment="textStart"/>
+
+    <Button
+        android:id="@+id/repo_detail_goto_button"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        app:layout_constraintTop_toBottomOf="@id/repo_detail_stargazers_label_textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/open_repo_button" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/detail_guide_vert_50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

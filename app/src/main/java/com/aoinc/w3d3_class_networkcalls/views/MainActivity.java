@@ -20,8 +20,11 @@ public class MainActivity extends AppCompatActivity
         implements MainViewInterface, RepoListFragmentInterface {
 
     MainPresenter mainPresenter;
+
     RepoListFragment repoListFragment;
     public List<GitResponse> gitResponseList = new ArrayList<>();
+
+    RepoDetailFragment repoDetailFragment = new RepoDetailFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +66,11 @@ public class MainActivity extends AppCompatActivity
     public void displayDetailFragment(GitResponse gitResponseItem) {
         Bundle gitBundle = new Bundle();
         gitBundle.putParcelable(GIT_PARCELABLE, gitResponseItem);
+        repoDetailFragment.setArguments(gitBundle);
 
-        // TODO: add new fragment, pass parcelable response into bundle
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.main_repos_list_fragment, repoDetailFragment)
+                .addToBackStack(repoDetailFragment.getTag())
+                .commit();
     }
 }

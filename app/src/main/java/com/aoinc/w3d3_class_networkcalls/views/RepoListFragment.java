@@ -79,8 +79,6 @@ public class RepoListFragment extends Fragment
     public void onRepoItemClick(int position) {
         GitResponse response = ((MainActivity) mainView).gitResponseList.get(position);
 //        Log.d("repo_listener", response.getName());
-
-        // TODO: add new fragment, pass parcelable response into bundle
         mainView.displayDetailFragment(response);
     }
 }
