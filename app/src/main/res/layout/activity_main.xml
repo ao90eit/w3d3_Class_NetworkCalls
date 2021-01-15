@@ -6,23 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".views.MainActivity">
 
-    <ImageView
-        android:id="@+id/profile_pic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/repos_info_recyclerView"
+    <fragment
+        android:id="@+id/main_repos_list_fragment"
+        android:name="com.aoinc.w3d3_class_networkcalls.views.RepoListFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/repo_item_layout"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        />
+        tools:layout="@layout/repo_list_fragment" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,7 +10,8 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface GitApi {
-    // BASE_URL = "https://api.github/com/ + users/{username}/repos"
+    // BASE_URL = "https://api.github/com/ + URL_PATH
+    // URL_PATH = "/users/{"+USER_NAME_PATH+"}/repos"
     @GET(Constants.URL_PATH)
-    public Call<List<GitResponse>> getGitResponse(@Path(Constants.USER_NAME_PATH) String userName);
+    Call<List<GitResponse>> getGitResponse(@Path(Constants.USER_NAME_PATH) String userName);
 }
