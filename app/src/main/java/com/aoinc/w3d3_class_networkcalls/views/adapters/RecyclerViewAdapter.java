@@ -21,9 +21,11 @@ import butterknife.ButterKnife;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RepoViewHolder> {
 
     private List<GitResponse> repoList;
+    private OnRepoClickListener onRepoClickListener;
 
-    public RecyclerViewAdapter(List<GitResponse> repoList) {
+    public RecyclerViewAdapter(List<GitResponse> repoList, OnRepoClickListener onRepoClickListener) {
         this.repoList = repoList;
+        this.onRepoClickListener = onRepoClickListener;
     }
 
     public void updateList(List<GitResponse> newList) {
@@ -35,13 +37,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public RepoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new RepoViewHolder(LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.repo_item_layout, parent, false));
+                .inflate(R.layout.repo_item_layout, parent, false), onRepoClickListener);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RepoViewHolder holder, int position) {
-        GitResponse item = repoList.get(position);
-        holder.textView.setText(item.getName());
+        GitResponse response = repoList.get(position);
+        holder.textView.setText(response.getName());
     }
 
     @Override
@@ -49,20 +51,28 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return repoList.size();
     }
 
+    public interface OnRepoClickListener {
+        void onRepoItemClick(int position);
+    }
+
     class RepoViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         @BindView(R.id.repo_item)
         public TextView textView;
 
-        public RepoViewHolder(@NonNull View itemView) {
+        OnRepoClickListener onRepoClickListener;
+
+        public RepoViewHolder(@NonNull View itemView, OnRepoClickListener onRepoClickListener) {
             super(itemView);
             ButterKnife.bind(this, itemView);
             itemView.setOnClickListener(this);
+            this.onRepoClickListener = onRepoClickListener;
         }
 
         @Override
         public void onClick(View v) {
-            Log.d("repo_click", "do something here");
+            Log.d("repo_listener", "on click in holder");
+            onRepoClickListener.onRepoItemClick(getAdapterPosition());
         }
     }
 }
